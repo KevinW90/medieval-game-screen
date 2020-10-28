@@ -1,0 +1,122 @@
+$lite-gold: #ffddaa;
+$dark-gold: #884411;
+
+:root {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: url('./assets/medieval\ village.png') no-repeat -13em 0 fixed;
+  background-size: cover;
+}
+
+#home {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5em 0;
+}
+
+#name {
+  text-align: center;
+  padding: 0 20px;
+}
+
+#btns {
+  width: 300px;
+}
+
+.btn-container:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.btn-container {
+  background: linear-gradient($lite-gold, $dark-gold);
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.btn {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  border: none;
+  background: url('assets/black\ bg.png');
+  border-radius: 50px;
+  font-family: 'Niconne', cursive;
+  color: $lite-gold;
+  font-size: 2.3rem;
+  padding: 5px 0;
+  -webkit-text-stroke: .5px black;
+
+  box-shadow: inset 0 2px 0 black;
+
+  overflow: hidden;
+
+  /* darken background image */
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  
+    content: '';
+    width: 100%;
+    height: 100%;
+  
+    background: rgba(0,0,0,.4);
+  }
+
+  /* top reflection */
+  &::after {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    z-index: -1;
+
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50px;
+  }
+}
+
+
+
+
+
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+
+  #name img {
+    transform: scale(2);
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-position: 0 0;
+  }
+}
